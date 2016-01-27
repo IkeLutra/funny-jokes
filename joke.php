@@ -4,4 +4,4 @@ require 'vendor/autoload.php';
 
 use Joker\MakeAJoke;
 $joker = new MakeAJoke();
-echo $joker->tellMeAJoke(false) . "\n";
+echo $joker->tellMeARandomJoke(false, "Vajeen", "Day") . "\n";

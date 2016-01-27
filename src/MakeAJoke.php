@@ -11,7 +11,9 @@ class MakeAJoke
 
     public function __construct()
     {
-        $this->client = new Client();
+        $this->client = new Client([
+            "base_uri" => "http://api.icndb.com/jokes/"
+        ]);
     }
 
     private function getClient()
@@ -19,9 +21,16 @@ class MakeAJoke
         return $this->client;
     }
 
-    public function tellMeAJoke($html=true)
+    public function tellMeARandomJoke($html = true, $firstName = false, $lastName = false)
     {
-        $response = $this->getClient()->get("http://api.icndb.com/jokes/random");
+        $query = [];
+        if ($firstName !== false) {
+            $query['firstName'] = $firstName;
+        }
+        if ($lastName !== false) {
+            $query['lastName'] = $lastName;
+        }
+        $response = $this->getClient()->get("random", ['query' => $query]);
         $data = json_decode((string) $response->getBody(), true);
         $joke = $data['value']['joke'];
         if ($html === false) {
