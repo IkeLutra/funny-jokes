@@ -6,6 +6,8 @@
             "email": "will@otterburn.me"
         }
     ],
+    "license" : "MIT",
+    "description" : "A class to interact with the International Chuck Norris Database API",
     "require": {
         "guzzlehttp/guzzle": "^6.1"
     },
