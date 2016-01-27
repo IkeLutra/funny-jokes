@@ -1,0 +1,17 @@
+{
+    "name": "willotter/funny-jokes",
+    "authors": [
+        {
+            "name": "Will Otterburn",
+            "email": "will@otterburn.me"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Joker\\" : "src/"
+        }
+    }
+}
